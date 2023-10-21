@@ -1,7 +1,7 @@
-
+import { HomeWrapper } from "@pages/HomeWrapper/HomeWrapper"
 
 const HomePage = () => {
-  return <>123</>
+  return <HomeWrapper />
 }
 
 export default HomePage

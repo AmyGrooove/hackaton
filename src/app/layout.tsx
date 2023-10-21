@@ -1,5 +1,6 @@
 import { ReactElement } from "react"
 import { Roboto } from "next/font/google"
+import { Providers } from "@core/providers"
 
 const roboto = Roboto({
   weight: ["400", "700"],
@@ -15,7 +16,9 @@ const MainLayout = ({ children }: IHomeLayout) => {
   return (
     <html lang="ru">
       <body className={roboto.className}>
+        <Providers>
           <main>{children}</main>
+        </Providers>
       </body>
     </html>
   )
