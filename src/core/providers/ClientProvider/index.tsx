@@ -86,29 +86,44 @@ const ClientProvider = ({ children }: IProviders) => {
           </button>
           <div className={st.dashName}>
             {pathname === "/"
-              ? "Главная страница"
+              ? "Создание дашборда"
               : contextData.data.accessCharts?.find(
                   (el) => el.id === pathname?.replace("/dashboard/", ""),
                 )?.name}
           </div>
         </div>
         <div className={st.leftSide}>
-          <button onClick={() => push("/")} className={st.button}>
-            Создать
-          </button>
-          <button onClick={() => logoutUser()} className={st.logout}>
+          {pathname !== "/" && (
+            <button
+              onClick={() => {
+                push("/")
+                setIsSideBarOpen(false)
+              }}
+              className={st.button}
+            >
+              Создать
+            </button>
+          )}
+          <button
+            onClick={() => {
+              logoutUser()
+              setIsSideBarOpen(false)
+            }}
+            className={st.logout}
+          >
             <UploadIcon />
           </button>
         </div>
       </div>
       <div className={cl(st.sideBar, isSideBarOpen && st.sideBar_open)}>
         {contextData.data.accessCharts?.length === 0 ? (
-          <div>У вас нет dashboard-ов</div>
+          <div>У вас ещё нет ни одного дашборда</div>
         ) : (
           contextData.data.accessCharts?.map((el) => (
             <Link
               key={el.id}
               href={"/dashboard/" + el.id}
+              onClick={() => setIsSideBarOpen(false)}
               className={cl(
                 st.link,
                 pathname?.includes(el.id) && st.link_active,

@@ -1,6 +1,6 @@
 import { API_URL } from "@/constants"
 
-const generate = async (name: string, count = 5): Promise<boolean | Error> => {
+const generate = async (name: string, count = 5): Promise<string | Error> => {
   const res = await fetch(`${API_URL}/chart/generate`, {
     method: "POST",
     headers: {
@@ -11,7 +11,7 @@ const generate = async (name: string, count = 5): Promise<boolean | Error> => {
     credentials: "include",
   })
 
-  return res.ok ? true : new Error("Failed to fetch data")
+  return res.ok ? res.text() : new Error("Failed to fetch data")
 }
 
 export { generate }

@@ -3,8 +3,8 @@ import { API_URL } from "@/constants"
 const uploadUrl = async (
   name: string,
   url: string,
-): Promise<boolean | Error> => {
-  const res = await fetch(`${API_URL}/chart/upload`, {
+): Promise<string | Error> => {
+  const res = await fetch(`${API_URL}/chart/uploadUrl`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -14,7 +14,7 @@ const uploadUrl = async (
     credentials: "include",
   })
 
-  return res.ok ? true : new Error("Failed to fetch data")
+  return res.ok ? res.text() : new Error("Failed to fetch data")
 }
 
 export { uploadUrl }

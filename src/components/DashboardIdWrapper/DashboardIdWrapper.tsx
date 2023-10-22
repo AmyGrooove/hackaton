@@ -36,9 +36,7 @@ const DashboardIdWrapper = () => {
 
   return (
     <div className={st.root}>
-      {chartData.data.map((el) => (
-        <ChartItem data={el} key={el.id} />
-      ))}
+      {chartData.data?.map((el) => <ChartItem data={el} key={el.id} />)}
     </div>
   )
 }
