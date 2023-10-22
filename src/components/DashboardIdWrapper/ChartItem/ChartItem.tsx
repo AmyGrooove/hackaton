@@ -12,7 +12,13 @@ import {
   ChartTypeRegistry,
   ArcElement,
   BarElement,
+  LineController,
   RadialLinearScale,
+  PieController,
+  BarController,
+  DoughnutController,
+  PolarAreaController,
+  RadarController,
 } from "chart.js"
 
 import { IChart } from "@/types/chart"
@@ -31,6 +37,12 @@ ChartJS.register(
   ArcElement,
   BarElement,
   RadialLinearScale,
+  LineController,
+  PieController,
+  BarController,
+  DoughnutController,
+  PolarAreaController,
+  RadarController,
 )
 
 enum EChartTypes {
