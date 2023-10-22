@@ -1,0 +1,86 @@
+@import "@/core/styles/theme/reusable.scss";
+
+.root {
+  height: 90vh;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  color: var(--black);
+  font-size: 32px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.modal {
+  box-shadow: 3px 3px 10px 0px rgba(120, 120, 120, 0.1);
+  border-radius: 8px;
+  border: 1px solid var(--grey);
+  padding: 90px 60px 60px 60px;
+
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--grey);
+
+  width: 100%;
+  max-width: 360px;
+  min-height: 24px;
+}
+
+.button {
+  box-shadow: 3px 3px 10px 0px rgba(120, 120, 120, 0.4);
+  border-radius: 5px;
+  background-color: var(--yellow);
+  border: none;
+  width: 100%;
+  min-height: 40px;
+  max-width: 280px;
+  cursor: pointer;
+  @include transition(background-color);
+
+  color: var(--white);
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+
+  &:hover {
+    background-color: var(--yellow-hover);
+  }
+}
+
+.changeType {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.changeTypeLabel {
+  color: var(--black);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.changeTypeButton {
+  color: var(--yellow);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  @include transition(color);
+
+  &:hover {
+    color: var(--yellow-hover);
+  }
+}

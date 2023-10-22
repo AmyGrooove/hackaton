@@ -1,7 +1,5 @@
 import { Chart } from "react-chartjs-2"
 import { useMemo, useState } from "react"
-import st from "./ChartItem.module.scss"
-import { IChart } from "@/types/chart"
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -14,7 +12,11 @@ import {
   ChartTypeRegistry,
   ArcElement,
 } from "chart.js"
+
+import { IChart } from "@/types/chart"
 import { getRandomColor } from "@/utils"
+
+import st from "./ChartItem.module.scss"
 
 ChartJS.register(
   CategoryScale,
@@ -51,6 +53,7 @@ const ChartItem = ({ data }: IChartItem) => {
       labels: data.values.map((el) => new Date(el.time).toLocaleDateString()),
       datasets: [
         {
+          label: "Chart",
           data: data.values.map((elem) => elem.value),
           backgroundColor: colors,
           borderColor: "black",

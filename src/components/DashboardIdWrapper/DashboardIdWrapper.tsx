@@ -1,14 +1,15 @@
 "use client"
 
-import { getChart } from "@/api"
-import { usePathname, useRouter } from "next/navigation"
+import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
-import st from "./DashboardIdWrapper.module.scss"
+
+import { getChart } from "@/api"
 import { IDashboard } from "@/types/dashboard"
+
+import st from "./DashboardIdWrapper.module.scss"
 import ChartItem from "./ChartItem/ChartItem"
 
 const DashboardIdWrapper = () => {
-  const { back } = useRouter()
   const pathname = usePathname()
 
   const [chartData, setChartData] = useState<IDashboard>({
@@ -34,13 +35,10 @@ const DashboardIdWrapper = () => {
   }, [pathname])
 
   return (
-    <div>
-      <button onClick={() => back()}>back</button>
-      <div className={st.charts}>
-        {chartData.data.map((el) => (
-          <ChartItem data={el} />
-        ))}
-      </div>
+    <div className={st.root}>
+      {chartData.data.map((el) => (
+        <ChartItem data={el} key={el.id} />
+      ))}
     </div>
   )
 }

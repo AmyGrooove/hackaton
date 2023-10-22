@@ -1,0 +1,113 @@
+@import "@/core/styles/theme/reusable.scss";
+
+.root {
+  height: 68px;
+  width: calc(100% - 80px);
+  padding: 0px 40px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &_disabled {
+    display: none;
+  }
+
+  border-bottom: 2px solid var(--grey);
+}
+
+.button {
+  box-shadow: 3px 3px 10px 0px rgba(120, 120, 120, 0.4);
+  border-radius: 5px;
+  background-color: var(--yellow);
+  border: none;
+  width: 100%;
+  min-height: 40px;
+  max-width: 280px;
+  cursor: pointer;
+  @include transition(background-color);
+  padding: 8px 48px;
+
+  color: var(--white);
+
+  font-size: 16px;
+  font-weight: 600;
+
+  &:hover {
+    background-color: var(--yellow-hover);
+  }
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid var(--black);
+  background-color: transparent;
+  cursor: pointer;
+  width: 42px;
+  height: 42px;
+}
+
+.leftSide {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.sideBar {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--grey-light);
+
+  position: absolute;
+  left: -300px;
+  z-index: 10;
+  height: calc(100% - 102px);
+  padding: 16px;
+  width: 100%;
+  max-width: 260px;
+  @include transition(left);
+
+  &_open {
+    left: 0px;
+  }
+}
+
+.link {
+  display: flex;
+  padding: 4px 8px;
+  border-radius: 5px;
+  @include transition(background-color);
+  align-items: center;
+  gap: 8px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  &:hover {
+    background-color: var(--grey-light2);
+  }
+
+  &_active {
+    background-color: var(--yellow);
+
+    &:hover {
+      background-color: var(--yellow);
+    }
+  }
+}
+
+.dashName {
+  color: var(--yellow);
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.sideBarButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

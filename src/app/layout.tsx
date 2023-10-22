@@ -1,9 +1,11 @@
 import { ReactElement } from "react"
-import { Roboto } from "next/font/google"
-import { Providers } from "@core/providers"
+import { Poppins } from "next/font/google"
 
-const roboto = Roboto({
-  weight: ["400", "700"],
+import { Providers } from "@/core/providers"
+import "@/core/styles/global.scss"
+
+const poppins = Poppins({
+  weight: ["400", "300", "400", "500", "600", "700"],
   subsets: ["latin"],
   display: "swap",
 })
@@ -15,7 +17,7 @@ interface IHomeLayout {
 const MainLayout = ({ children }: IHomeLayout) => {
   return (
     <html lang="ru">
-      <body className={roboto.className}>
+      <body className={poppins.className}>
         <Providers>
           <main>{children}</main>
         </Providers>

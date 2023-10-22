@@ -1,4 +1,4 @@
-import { DashboardIdWrapper } from "@pages/DashboardIdWrapper/DashboardIdWrapper"
+import { DashboardIdWrapper } from "@/components/DashboardIdWrapper/DashboardIdWrapper"
 
 const DashboardIdPage = () => {
   return <DashboardIdWrapper />

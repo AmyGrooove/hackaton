@@ -1,4 +1,4 @@
-import { LoginWrapper } from "@pages/LoginWrapper/LoginWrapper"
+import { LoginWrapper } from "@/components/LoginWrapper/LoginWrapper"
 
 const LoginPage = () => {
   return <LoginWrapper />

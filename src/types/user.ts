@@ -3,7 +3,7 @@ interface IUser {
   username: string
   image: string | null
   role: string
-  accessCharts: string[]
+  accessCharts: { id: string; name: string }[]
 }
 
 export type { IUser }

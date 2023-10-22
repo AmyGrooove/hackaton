@@ -1,0 +1,33 @@
+@import "@/core/styles/theme/reusable.scss";
+
+* {
+  letter-spacing: 1px;
+  color: var(--black);
+
+  &:focus {
+    outline: none;
+  }
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  overflow-x: hidden;
+
+  margin: 0;
+  padding: 0;
+
+  @extend .colors, .transparent;
+}

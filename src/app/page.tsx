@@ -1,4 +1,4 @@
-import { HomeWrapper } from "@pages/HomeWrapper/HomeWrapper"
+import { HomeWrapper } from "@/components/HomeWrapper/HomeWrapper"
 
 const HomePage = () => {
   return <HomeWrapper />
