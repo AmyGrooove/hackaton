@@ -1,7 +1,7 @@
 import { API_URL } from "@/constants"
-import { IChart } from "@/types/chart"
+import { IDashboard } from "@/types/dashboard"
 
-const getChart = async (chartId: string): Promise<IChart | Error> => {
+const getChart = async (chartId: string): Promise<IDashboard | Error> => {
   const res = await fetch(`${API_URL}/chart/getChart?id=${chartId}`, {
     method: "GET",
     headers: {

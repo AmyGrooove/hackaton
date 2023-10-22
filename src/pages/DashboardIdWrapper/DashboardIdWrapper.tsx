@@ -1,14 +1,17 @@
 "use client"
 
 import { getChart } from "@/api"
-import { IChart } from "@/types/chart"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
+import st from "./DashboardIdWrapper.module.scss"
+import { IDashboard } from "@/types/dashboard"
+import ChartItem from "./ChartItem/ChartItem"
 
 const DashboardIdWrapper = () => {
+  const { back } = useRouter()
   const pathname = usePathname()
 
-  const [chartData, setChartData] = useState<IChart>({
+  const [chartData, setChartData] = useState<IDashboard>({
     _id: "",
     name: "",
     data: [],
@@ -30,7 +33,16 @@ const DashboardIdWrapper = () => {
     return () => clearInterval(intervalId)
   }, [pathname])
 
-  return <div>{JSON.stringify(chartData)}</div>
+  return (
+    <div>
+      <button onClick={() => back()}>back</button>
+      <div className={st.charts}>
+        {chartData.data.map((el) => (
+          <ChartItem data={el} />
+        ))}
+      </div>
+    </div>
+  )
 }
 
 export { DashboardIdWrapper }

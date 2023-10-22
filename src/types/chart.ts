@@ -1,9 +1,9 @@
 interface IChart {
-  _id: string
-  name: string
-  data: {
-    id: string
-    values: string
+  id: string
+  values: {
+    time: string
+    value: number
+    _id: string
   }[]
 }
 
