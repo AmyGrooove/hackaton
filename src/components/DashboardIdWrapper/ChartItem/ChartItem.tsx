@@ -11,6 +11,8 @@ import {
   Legend,
   ChartTypeRegistry,
   ArcElement,
+  BarElement,
+  RadialLinearScale,
 } from "chart.js"
 
 import { IChart } from "@/types/chart"
@@ -27,11 +29,17 @@ ChartJS.register(
   Tooltip,
   Legend,
   ArcElement,
+  BarElement,
+  RadialLinearScale,
 )
 
 enum EChartTypes {
   line = "line",
   pie = "pie",
+  bar = "bar",
+  doughnut = "doughnut",
+  polarArea = "polarArea",
+  radar = "radar",
 }
 
 interface IChartItem {
@@ -58,6 +66,7 @@ const ChartItem = ({ data }: IChartItem) => {
           backgroundColor: colors,
           borderColor: "black",
           borderWidth: 1,
+          fill: true,
         },
       ],
     }),

@@ -10,10 +10,6 @@ const upload = async (
 
   const res = await fetch(`${API_URL}/chart/upload`, {
     method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
     body: formData,
     credentials: "include",
   })

@@ -55,6 +55,7 @@
   max-width: 280px;
   cursor: pointer;
   @include transition(background-color);
+  padding: 8px 24px;
 
   color: var(--white);
 
@@ -68,7 +69,7 @@
 }
 
 .separate {
-  height: 100px;
+  height: 120px;
   width: 1px;
   background-color: grey;
 }
@@ -95,7 +96,7 @@
 .downloadWrapper {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
   align-items: center;
   justify-content: center;
 }

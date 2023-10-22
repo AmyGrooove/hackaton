@@ -20,13 +20,15 @@ const HomeWrapper = () => {
     e.preventDefault()
     if (!e.target.files?.[0]) return
 
-    await upload(e.target.files?.[0], nameDash).then((res) =>
-      push("/dashboard/" + res),
+    await upload(e.target.files?.[0], nameDash).then(
+      (res) => typeof res === "string" && push("/dashboard/" + res),
     )
   }
 
   const urlHandler = async () => {
-    await uploadUrl(nameDash, url).then((res) => push("/dashboard/" + res))
+    uploadUrl(nameDash, url).then(
+      (res) => typeof res === "string" && push("/dashboard/" + res),
+    )
   }
 
   return (
@@ -63,10 +65,17 @@ const HomeWrapper = () => {
             <div className={st.choose}>
               <div className={st.downloadWrapper}>
                 <div className={st.label}>Выберите json-файл</div>
-                <label>
-                  <button>132</button>
-                  <input type="file" onChange={handleChangeFile} />
-                </label>
+                <div>
+                  <input
+                    id="upload"
+                    type="file"
+                    onChange={handleChangeFile}
+                    hidden
+                  />
+                  <label htmlFor="upload" className={st.button}>
+                    Выберите файл
+                  </label>
+                </div>
               </div>
               <div className={st.separate} />
               <div className={st.downloadWrapper}>
